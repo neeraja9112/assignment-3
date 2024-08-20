@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Text and Container Color</title>
+    <link rel="stylesheet" href="3style.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <p id="text">This is the text inside the container.</p>
+        <button id="toggleButton" onclick="toggleState()">Click me!</button>
+    </div>
+  
+    <script>
+        let isToggled = false;
+
+function toggleState() {
+    const container = document.getElementById('container');
+    const text = document.getElementById('text');
+    const button = document.getElementById('toggleButton');
+
+    if (isToggled) {
+        // Revert to initial state
+        container.style.backgroundColor = '#8c2222';
+        text.textContent = 'This is the text inside the container.';
+        button.textContent = 'Click me!';
+        button.style.backgroundColor = '#fff';
+        button.style.color = '#000';
+    } else {
+        // Change state
+        container.style.backgroundColor = '#4CAF50';
+        text.textContent = 'Text and color changed!';
+        button.textContent = 'Revert';
+        button.style.backgroundColor = "white";
+    }
+
+    isToggled = !isToggled;
+}
+    </script>
+</body>
+</html>
